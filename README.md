@@ -88,8 +88,11 @@ to install, you'll need to have node.js (latest version recommended) installed.
  Aditionally there are 4 scripts included:
 
 npm run START - run the app in development environment
+
 npm run TEST  - run tests in the __tests__ folder
+
 npm run LINT  - analyze code for bugs and stylistic errors
+
 npm run BUILD - Creates a build directory with a production build of the app
 
 
