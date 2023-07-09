@@ -11,7 +11,7 @@ Gadgetz is a small e-commerce site made in React's.js echosystem for a front-end
 
 # Project description
 
- As mentioned in the introduction, Gadgetz is a small website made for online purchases. It allows the user to view the latest products, filter them by Brand and Model and see the details of each one of them too. Aditionally, the user must be able to add products to his or her cart and see the amount of items selected for purchase.
+ As mentioned in the introduction, Gadgetz is a small website made for purchasing smartphones online. It allows the user to view the latest products provided by an API, filter them by Brand and Model and see the details of each one of them too. Aditionally, the user must be able to add products to his or her cart and see the amount of items selected for purchase.
 
   The design its also part of the challenge, including adaptability to different resolutions and devices. 
 
