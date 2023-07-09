@@ -21,7 +21,7 @@ Gadgetz is a small e-commerce site made in React's.js echosystem for a front-end
 It consists in two pages, one with the list of all the products and a limited scope of information about each product, and the otherone is a detail page with full information and interaction capabilities.
 
 ## Product List Page
-![Screenshot](./screenshoots/PLP.jpeg)
+![Screenshot](./screenshots/PLP.jpeg)
 
 In this page the list of available products will be displayed, and the user will be able to see some of the information corresponding to each product, by clicking into an product's name, the user will be taken to the details page of the selected item
 
@@ -48,7 +48,7 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
  It consists in two columns. 
  One for a full sized image of thje product, and the other one to display the detailed description of the product and actions you can perform with it. 
 
-![Screenshot](./screenshoots/PDP.jpeg)
+![Screenshot](./screenshots/PDP.jpeg)
 
 - Product Details page consists in 3 main components:
 
