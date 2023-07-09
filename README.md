@@ -28,7 +28,9 @@ In this page the list of available products will be displayed, and the user will
 - Product List Page consist's in 3 main components:
 
 Header
+
 Searchbar
+
 List / List Element
 
 
@@ -55,7 +57,7 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
     Image
 
     Product Description
-    
+
     Actions
 
 -Image component displays the product's image
