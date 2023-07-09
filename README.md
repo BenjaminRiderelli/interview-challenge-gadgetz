@@ -53,7 +53,9 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 - Product Details page consists in 3 main components:
 
     Image
+
     Product Description
+    
     Actions
 
 -Image component displays the product's image
