@@ -1,13 +1,16 @@
 import style from "./App.module.css";
 import NavBar from "./components/navbar/navbar";
-import { Outlet } from "react-router-dom";
+import ProductList from "./components/productlist/productlist";
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
     <main className={style.app}>
       <NavBar/>
-      <Outlet/>
+      <Routes>
+        <Route path="/products" element={<ProductList/>} />
+      </Routes>
     </main>
   );
 }
