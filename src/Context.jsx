@@ -29,7 +29,7 @@ export const ContextProvider = ({ children }) => {
 
 
   const onSuccess = (data) => {
-    console.log(data);
+    // console.log(data);
   };
 
   const onError = (error) => {
