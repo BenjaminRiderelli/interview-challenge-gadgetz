@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import style from "./productlist.module.css";
 import Product from "./product";
-import { useAllProductsData } from "../../datafetching/api";
+import { handleSearch } from "../../utils/utils";
 import { Skeleton } from "@mui/material";
 import { LOADING_ELEMENTS_ARR } from "../../utils/utils";
 import Context from "../../Context";
@@ -27,19 +27,6 @@ const ProductList = () => {
   useEffect(() => {
     setProducts(allProductsData);
   }, [allProductsData]);
-
-  const handleSearch = (arr, string) => {
-    if (!string) {
-      setProducts(allProductsData);
-      return;
-    } else if (!arr) {
-      return;
-    }
-    const filteredArr = arr.filter(
-      (el) => el.model.includes(string) || el.brand.includes(string)
-    );
-    setProducts(filteredArr);
-  };
 
   const allProductsElements = products?.map((prod) => {
     const { id, brand, model, price, imgUrl } = prod;
@@ -70,7 +57,13 @@ const ProductList = () => {
         <label htmlFor="search-input">
           <p>Search</p>
           <input
-            onChange={(e) => handleSearch(products, e.target.value)}
+            onChange={(e) => {
+              if (!e.target.value) {
+                setProducts(allProductsData);
+                return;
+              }
+              setProducts(handleSearch(allProductsData, e.target.value))
+            }}
             id="search-input"
             className={style.searchInput}
             type="text"
