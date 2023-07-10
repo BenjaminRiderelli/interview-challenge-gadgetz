@@ -28,6 +28,8 @@ const ProductList = () => {
     setProducts(allProductsData);
   }, [allProductsData]);
 
+  console.log(allProductsData)
+
   const allProductsElements = products?.map((prod) => {
     const { id, brand, model, price, imgUrl } = prod;
     return (

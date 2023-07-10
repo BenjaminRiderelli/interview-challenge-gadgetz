@@ -27,3 +27,7 @@
     color:var(--accent-color)
 }
 
+.cardImg{
+    height: 18em;
+    object-fit: cover;
+}
