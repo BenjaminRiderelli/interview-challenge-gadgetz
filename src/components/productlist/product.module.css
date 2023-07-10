@@ -11,6 +11,11 @@
 
 .infoContainer{
     text-align: center;
+    letter-spacing: 1px;
+}
+
+.infoContainer > p{
+    font-size: 1.4rem;
 }
 
 .infoContainer > h3 *{
