@@ -1,30 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Logo from "../../assets/logo-no-background.svg";
 import style from "./navbar.module.css";
 import { NavLink } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import Context from "../../Context";
 
 const NavBar = () => {
-  const [screenSize, setScreenSize] = useState(getCurrentDimension());
-
-  function getCurrentDimension() {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  }
-
-  useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentDimension());
-    };
-    window.addEventListener("resize", updateDimension);
-
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [screenSize]);
-
+  const {screenSize} = useContext(Context)
   return (
     <header className={style.header}>
       <img className={style.logo} src={Logo} />

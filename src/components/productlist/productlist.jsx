@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import style from "./productlist.module.css";
 import Product from "./product";
 import { useAllProductsData } from "../../datafetching/api";
@@ -7,10 +7,41 @@ import { LOADING_ELEMENTS_ARR } from "../../utils/utils";
 import Context from "../../Context";
 
 const ProductList = () => {
-  const { allProductsData, allProductsIsLoading, allProductsIsError } =
-    useContext(Context);
+  const {
+    allProductsData,
+    allProductsIsLoading,
+    allProductsIsError,
+    screenSize,
+  } = useContext(Context);
 
-  const allProductsElements = allProductsData?.data.map((prod) => {
+  const [products, setProducts] = useState([
+    {
+      id: "",
+      imgUrl: "",
+      brand: "",
+      model: "",
+      price: "",
+    },
+  ]);
+
+  useEffect(() => {
+    setProducts(allProductsData);
+  }, [allProductsData]);
+
+  const handleSearch = (arr, string) => {
+    if (!string) {
+      setProducts(allProductsData);
+      return;
+    } else if (!arr) {
+      return;
+    }
+    const filteredArr = arr.filter(
+      (el) => el.model.includes(string) || el.brand.includes(string)
+    );
+    setProducts(filteredArr);
+  };
+
+  const allProductsElements = products?.map((prod) => {
     const { id, brand, model, price, imgUrl } = prod;
     return (
       <Product
@@ -34,16 +65,30 @@ const ProductList = () => {
     );
 
   return (
-    <section className={style.productList}>
-      {allProductsIsLoading
-        ? LOADING_ELEMENTS_ARR.map((element) => (
-            <Skeleton
-              key={element}
-              className={style.skeleton}
-              variant="rectangular"
-            />
-          ))
-        : allProductsElements}
+    <section>
+      <div className={style.searchBarContainer}>
+        <label htmlFor="search-input">
+          <p>Search</p>
+          <input
+            onChange={(e) => handleSearch(products, e.target.value)}
+            id="search-input"
+            className={style.searchInput}
+            type="text"
+            placeholder="Type in a brand or model"
+          />
+        </label>
+      </div>
+      <div className={style.productList}>
+        {allProductsIsLoading
+          ? LOADING_ELEMENTS_ARR.map((element) => (
+              <Skeleton
+                key={element}
+                className={style.skeleton}
+                variant="rectangular"
+              />
+            ))
+          : allProductsElements}
+      </div>
     </section>
   );
 };
