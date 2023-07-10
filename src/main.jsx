@@ -4,6 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ContextProvider } from "./Context.jsx";
 
 const queryClient = new QueryClient();
 
@@ -11,7 +13,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <React.StrictMode>
-        <App />
+        <ContextProvider>
+          <App />
+          <ReactQueryDevtools />
+        </ContextProvider>
       </React.StrictMode>
     </QueryClientProvider>
   </BrowserRouter>
