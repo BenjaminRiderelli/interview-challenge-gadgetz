@@ -53,6 +53,10 @@
   margin: -1px;
 }
 
+.searchInput:hover{
+  cursor:text;
+}
+
 @media (max-width: 500px) {
   .productList {
     grid-template-columns: 1fr;
