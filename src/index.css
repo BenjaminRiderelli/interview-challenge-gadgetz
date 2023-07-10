@@ -8,12 +8,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --main-bg-color: #f4fffd;
+  --secondary-bg-color:#1C6E8C;
+  --accent-color:#F9DC5C;
+  --main-text-color:#0A014F;
+  --hover-color:#1B998B;
+
 }
 
-#root {
-  max-width: 1280px;
-  min-width: 320px;
+#root{
+  min-width: 100%;
+  min-height: 100%;
 }
+
+
+img{
+  display:block;
+}
+
 
 h1,
 h2,
@@ -30,4 +43,5 @@ body {
   margin: 0;
   display: flex;
   min-height: 100vh;
+  min-width: 100vw;
 }
