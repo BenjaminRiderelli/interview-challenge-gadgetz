@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import style from "./App.module.css";
+import NavBar from "./components/navbar/navbar";
+import { Outlet } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <h1>Gadgetz, comming soon.</h1>
-    </>
-  )
+    <main className={style.app}>
+      <NavBar/>
+      <Outlet/>
+    </main>
+  );
 }
 
-export default App
+export default App;

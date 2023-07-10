@@ -11,7 +11,7 @@ Gadgetz is a small e-commerce site made in React's.js echosystem for a front-end
 
 # Project description
 
- As mentioned in the introduction, Gadgetz is a small website made for online purchases. It allows the user to view the latest products, filter them by Brand and Model and see the details of each one of them too. Aditionally, the user must be able to add products to his or her cart and see the amount of items selected for purchase.
+ As mentioned in the introduction, Gadgetz is a small website made for purchasing smartphones online. It allows the user to view the latest products provided by an API, filter them by Brand and Model and see the details of each one of them too. Aditionally, the user must be able to add products to his or her cart and see the amount of items selected for purchase.
 
   The design its also part of the challenge, including adaptability to different resolutions and devices. 
 
@@ -21,14 +21,16 @@ Gadgetz is a small e-commerce site made in React's.js echosystem for a front-end
 It consists in two pages, one with the list of all the products and a limited scope of information about each product, and the other one is a detail page with full information and interaction capabilities.
 
 ## Product List Page
-![Screenshot](./screenshoots/PLP.jpeg)
+![Screenshot](./screenshots/PLP.jpeg)
 
 In this page the list of available products will be displayed, and the user will be able to see some of the information corresponding to each product, by clicking into an product's name, the user will be taken to the details page of the selected item
 
 - Product List Page consist's in 3 main components:
 
 Header
+
 Searchbar
+
 List / List Element
 
 
@@ -48,12 +50,14 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
  It consists in two columns. 
  One for a full sized image of thje product, and the other one to display the detailed description of the product and actions you can perform with it. 
 
-![Screenshot](./screenshoots/PDP.jpeg)
+![Screenshot](./screenshots/PDP.jpeg)
 
 - Product Details page consists in 3 main components:
 
     Image
+
     Product Description
+
     Actions
 
 -Image component displays the product's image
@@ -79,13 +83,16 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 
 # Scripts and Instalation
 
-to install, just clone the main branch of this repository and hit npm install.
-
+to install, you'll need to have node.js (latest version recommended) installed. 
+ Just clone the main branch of this repository and hit npm install
  Aditionally there are 4 scripts included:
 
 npm run START - run the app in development environment
+
 npm run TEST  - run tests in the __tests__ folder
+
 npm run LINT  - analyze code for bugs and stylistic errors
+
 npm run BUILD - Creates a build directory with a production build of the app
 
 
