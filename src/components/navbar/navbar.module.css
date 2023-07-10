@@ -39,6 +39,16 @@
 }
 
 
+.shoppingCartContainer{
+    position:relative;
+}
+
+.numberofElements{
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+
 .shoppingCart{
     font-size:50px;
     cursor:pointer;

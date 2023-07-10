@@ -43,7 +43,7 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-      <span>
+      <span className={style.shoppingCartContainer}>
         <ShoppingCartOutlinedIcon className={style.shoppingCart} />
       </span>
     </header>
