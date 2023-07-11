@@ -95,7 +95,7 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 # Scripts and Instalation
 
 to install, you'll need to have node.js (latest version recommended) installed. 
- Just clone the main branch of this repository and hit npm install.
+ Just clone the master branch of this repository and hit npm install.
  Aditionally there are 4 scripts included:
 
 npm run START - run the app in development environment
