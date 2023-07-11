@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import Logo from "../../assets/logo-no-background.svg";
 import style from "./header.module.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Context from "../../Context";
 
@@ -14,7 +14,9 @@ const HEADER = () => {
 
   return (
     <header className={style.header}>
+      <Link to="/products">
       <img className={style.logo} src={Logo} />
+      </Link>
       <nav className={style.navbar}>
         <ul>
           <li>
