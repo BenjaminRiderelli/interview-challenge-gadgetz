@@ -6,6 +6,7 @@ import IMAGE from "./imagecomponent/imagewithmodal.jsx";
 import DESCRIPTION from "./descriptioncomponent/description";
 import ACTIONS from "./actionscomponent/actions";
 import Spinner from "../spinner/spinner";
+import NotFound from "../notfound/notfound";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -82,6 +83,10 @@ const ProductDetails = () => {
     weight,
   };
 
+  if (singleProductIsError) {
+  return  <NotFound />;
+  }
+
   if (singleProductIsLoading) {
     return (
       <section className={styles.productDetailsContainer}>
@@ -103,10 +108,7 @@ const ProductDetails = () => {
             <DESCRIPTION descriptionData={descriptionData} />
           </div>
           <div className={styles.actions}>
-            <ACTIONS 
-            id={productId}
-            options={options}
-            />
+            <ACTIONS id={productId} options={options} />
           </div>
         </div>
       </div>
