@@ -39,10 +39,14 @@ The Header includes the logo and breadcrumbs for the specified route the user is
 Searchbar filters on real time the products that match the search's input value with the brand and model properties of each product
 
 The list of products has a maximum of 4 columns and is responsive to multiple devices and resolutions, as for each item itself displays the following information:
-    -Image of the product
-    -Brand of the product
-    -Model of the product
-    -Price of the product
+
+    Image of the product
+
+    Brand of the product
+
+    Model of the product
+
+    Price of the product
 
 ## Product Details Page
 
@@ -70,21 +74,21 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
     
     Price
     
-     CPU
+    CPU
      
-     RAM
+    RAM
      
-     Operating sytem
+    Operating sytem
      
-     Screen Resolution
+    Screen Resolution
     
-     Battery Specifications
+    Battery Specifications
      
-     Camaras
+    Cameras
      
-     Size
+    Size
      
-     Weight
+    Weight
 
 -Actions component lets the user choose among different options for the same product such as Storage and colour, also it lets the user add the selected product to the cart.
 
