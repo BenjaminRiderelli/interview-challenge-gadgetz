@@ -46,7 +46,7 @@ const ACTIONS = ({ id, options }) => {
 
   const onMutation = (data) => {
     setCartItems((prev) => prev + data.data.count);
-    setValidationMsg("Item Added !");
+    setValidationMsg("Item added to your cart !");
   };
 
   const onMutationError = (err) => {

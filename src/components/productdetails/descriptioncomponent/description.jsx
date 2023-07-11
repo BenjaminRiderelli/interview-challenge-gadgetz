@@ -10,6 +10,8 @@ const DESCRIPTION = ({ descriptionData }) => {
       fixedTitle = "Secondary camera";
     } else if (key === "displayResolution") {
       fixedTitle = "Display resolution";
+    } else if (key === "os") {
+      fixedTitle = "Operating system";
     } else {
       fixedTitle = key;
     }
@@ -19,7 +21,9 @@ const DESCRIPTION = ({ descriptionData }) => {
         <h3>{fixedTitle.charAt(0).toUpperCase() + fixedTitle.slice(1)}</h3>
         <p>
           {key === "price" ? "$" : ""}
+
           {descriptionData[key] ? descriptionData[key] : "N/A"}
+          {key === "weight" ? " gr" : ""}
         </p>
       </div>
     );

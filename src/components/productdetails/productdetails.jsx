@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSingleProductData } from "../../datafetching/api";
 import styles from "./productdetails.module.css";
 import IMAGE from "./imagecomponent/imagewithmodal.jsx";
@@ -11,7 +11,7 @@ import NotFound from "../notfound/notfound";
 const ProductDetails = () => {
   const { id } = useParams();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onSuccess = () => {
     //perform action on success
@@ -35,38 +35,15 @@ const ProductDetails = () => {
     model,
     price,
     imgUrl,
-    networkTechnology,
-    networkSpeed,
-    gprs,
-    edge,
-    announced,
-    status,
     dimentions,
     weight,
-    sim,
-    displayType,
     displayResolution,
-    displaySize,
     os,
     cpu,
-    chipset,
-    gpu,
-    externalMemory,
-    internalMemory,
     ram,
     primaryCamera,
     secondaryCmera,
-    speaker,
-    audioJack,
-    wlan,
-    bluetooth,
-    gps,
-    nfc,
-    radio,
-    usb,
-    sensors,
     battery,
-    colors,
     options,
   } = singleProductData ?? {};
 
@@ -86,7 +63,7 @@ const ProductDetails = () => {
   };
 
   if (singleProductIsError) {
-  return  <NotFound />;
+    return <NotFound />;
   }
 
   if (singleProductIsLoading) {
@@ -103,13 +80,18 @@ const ProductDetails = () => {
     <section className={styles.productDetailsContainer}>
       <div className={styles.detailsContainer}>
         <div className={styles.imgCol}>
-          <button
-          className={styles.gobackBtn}
-          onClick={()=>{navigate(-1)}}
-          >
-            Go back
-          </button>
+          <div className={styles.gobackBtnContainer}>
+            <button
+              className={styles.gobackBtn}
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              Go back
+            </button>
+          </div>
           <IMAGE img={imgUrl} alt={`picture of ${model}`} />
+          <span></span>
         </div>
         <div className={styles.infoCol}>
           <div className={styles.info}>
