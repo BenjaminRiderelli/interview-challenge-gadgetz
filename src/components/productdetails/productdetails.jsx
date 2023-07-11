@@ -2,7 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSingleProductData } from "../../datafetching/api";
 import styles from "./productdetails.module.css";
-import IMAGE from './imagecomponent/imagewithmodal.jsx'
+import IMAGE from "./imagecomponent/imagewithmodal.jsx";
+import DESCRIPTION from "./descriptioncomponent/description";
 import Spinner from "../spinner/spinner";
 
 const ProductDetails = () => {
@@ -66,7 +67,20 @@ const ProductDetails = () => {
   } = singleProductData ?? {};
   const { colors: optionColors, storages } = options ?? {};
 
-
+  const descriptionData = {
+    brand,
+    model,
+    price,
+    cpu,
+    ram,
+    os,
+    displayResolution,
+    battery,
+    primaryCamera,
+    secondaryCmera,
+    dimentions,
+    weight,
+  };
 
   if (singleProductIsLoading) {
     return (
@@ -82,18 +96,13 @@ const ProductDetails = () => {
     <section className={styles.productDetailsContainer}>
       <div className={styles.detailsContainer}>
         <div className={styles.imgCol}>
-          <IMAGE
-          img={imgUrl}
-          alt={`picture of ${model}`}
-          />
-        </div>  
+          <IMAGE img={imgUrl} alt={`picture of ${model}`} />
+        </div>
         <div className={styles.infoCol}>
           <div className={styles.info}>
-
+            <DESCRIPTION descriptionData={descriptionData} />
           </div>
-          <div className={styles.actions}>
-
-          </div>
+          <div className={styles.actions}></div>
         </div>
       </div>
     </section>

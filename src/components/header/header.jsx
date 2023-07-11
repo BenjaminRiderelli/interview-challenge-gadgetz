@@ -49,6 +49,7 @@ const HEADER = () => {
       <span className={style.shoppingCartContainer}>
         <ShoppingCartOutlinedIcon className={style.shoppingCart} />
       </span>
+      {/* <p>{screenSize.width}</p> */}
     </header>
   );
 };
