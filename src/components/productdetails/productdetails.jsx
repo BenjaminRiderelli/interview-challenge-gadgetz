@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { useSingleProductData } from "../../datafetching/api";
 import styles from "./productdetails.module.css";
 import IMAGE from "./imagecomponent/imagewithmodal.jsx";
@@ -10,6 +10,8 @@ import NotFound from "../notfound/notfound";
 
 const ProductDetails = () => {
   const { id } = useParams();
+
+  const navigate = useNavigate()
 
   const onSuccess = () => {
     //perform action on success
@@ -101,6 +103,12 @@ const ProductDetails = () => {
     <section className={styles.productDetailsContainer}>
       <div className={styles.detailsContainer}>
         <div className={styles.imgCol}>
+          <button
+          className={styles.gobackBtn}
+          onClick={()=>{navigate(-1)}}
+          >
+            Go back
+          </button>
           <IMAGE img={imgUrl} alt={`picture of ${model}`} />
         </div>
         <div className={styles.infoCol}>

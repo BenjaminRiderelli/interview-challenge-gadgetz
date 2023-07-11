@@ -6,7 +6,6 @@
 }
 
 .spinnerContainer {
-  /* border: 2px solid blue; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -22,8 +21,28 @@
 .imgCol {
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+}
+
+.gobackBtn {
+  margin-bottom:5em;
+  padding:1em 3em;
+  border:none;
+  border-radius: 6px;
+  cursor:pointer;
+  background-color: var(--hover-color);
+  color:var(--main-bg-color);
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  
+}
+
+.gobackBtn:active{
+  transform: scale(0.98);
 }
 
 .infoCol {
