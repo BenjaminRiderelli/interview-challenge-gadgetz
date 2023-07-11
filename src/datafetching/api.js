@@ -27,7 +27,9 @@ export const useAllProductsData = (onSuccess, onError) => {
     queryKey: ["all-products"],
     queryFn: () => getAllProducts(),
     onSuccess:onSuccess,
-    onError:onError
+    onError:onError,
+    staleTime: 1000 * 60 * 60,
+    cacheTime: 1000 * 60 * 60
   });
 };
 
@@ -36,7 +38,9 @@ export const useSingleProductData = (onSuccess, onError, id) => {
     queryKey: ["product",{productid:id}],
     queryFn: () => getProductById(id),
     onSuccess:onSuccess,
-    onError:onError
+    onError:onError,
+    staleTime: 1000 * 60 * 60,
+    cacheTime: 1000 * 60 * 60
   });
 };
 
