@@ -41,6 +41,8 @@ export const ContextProvider = ({ children }) => {
     isLoading: allProductsIsLoading,
     isError: allProductsIsError,
   } = useAllProductsData(onSuccess, onError);
+
+  
   const allProductsData = allProducts?.data
   return (
     <Context.Provider

@@ -5,6 +5,7 @@ import { handleSearch } from "../../utils/utils";
 import { Skeleton } from "@mui/material";
 import { LOADING_ELEMENTS_ARR } from "../../utils/utils";
 import Context from "../../Context";
+import SEARCH from "./search";
 
 const ProductList = () => {
   const {
@@ -28,7 +29,13 @@ const ProductList = () => {
     setProducts(allProductsData);
   }, [allProductsData]);
 
-  console.log(allProductsData)
+  const handleSearchOnChange = (e) => {
+    if (!e.target.value) {
+      setProducts(allProductsData);
+      return;
+    }
+    setProducts(handleSearch(allProductsData, e.target.value));
+  };
 
   const allProductsElements = products?.map((prod) => {
     const { id, brand, model, price, imgUrl } = prod;
@@ -55,24 +62,7 @@ const ProductList = () => {
 
   return (
     <section>
-      <div className={style.searchBarContainer}>
-        <label htmlFor="search-input">
-          <p>Search</p>
-          <input
-            onChange={(e) => {
-              if (!e.target.value) {
-                setProducts(allProductsData);
-                return;
-              }
-              setProducts(handleSearch(allProductsData, e.target.value))
-            }}
-            id="search-input"
-            className={style.searchInput}
-            type="text"
-            placeholder="Type in a brand or model"
-          />
-        </label>
-      </div>
+      <SEARCH handleSearchOnChange={handleSearchOnChange} />
       <div className={style.productList}>
         {allProductsIsLoading
           ? LOADING_ELEMENTS_ARR.map((element) => (
