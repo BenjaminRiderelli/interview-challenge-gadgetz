@@ -63,8 +63,9 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 -Image component displays the product's image
 
 -Product's description component details the following information:
-     Brand
-     
+    
+    Brand
+    
     Model
     
     Price
