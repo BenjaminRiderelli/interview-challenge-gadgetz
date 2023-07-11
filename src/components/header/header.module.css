@@ -1,0 +1,81 @@
+.header {
+  border: 2px solid var(--secondary-bg-color);
+  background-color: var(--main-bg-color);
+  width: 100%;
+  min-height: 10%;
+  max-height: 100px;
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  position: fixed;
+  left:0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar > ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  font-size: 1.5rem;
+}
+
+.navbar > ul > li {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar > ul * {
+  text-decoration: none;
+}
+
+.link {
+  all: unset;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .navbar > ul *:not(:last-child) {
+    display: none;
+  }
+}
+
+.logo {
+  object-fit: contain;
+  max-width: 90px;
+}
+
+.shoppingCartContainer {
+  position: relative;
+}
+
+.cartItems{
+  position:absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom:-12px;
+  right:-15px;
+  border-radius: 50%;
+  background-color: var(--hover-color);
+  width:25px;
+  height:25px;
+  font-weight:500;
+  color:var(--main-bg-color);
+}
+
+.numberofElements {
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.shoppingCart {
+  font-size: 50px;
+  cursor: pointer;
+  color: var(--secondary-bg-color);
+  transform: scale(2);
+}
