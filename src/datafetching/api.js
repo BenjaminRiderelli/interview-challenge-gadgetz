@@ -11,15 +11,26 @@ export const api = axios.create({
 });
 
 export const getAllProducts = (queryParams) => {
-  return api.get("", {params:queryParams});
+  return api.get("");
 };
 
-export const useAllProductsData = (onSuccess, onError, queryParams) => {
+export const getProductById = (id) =>{
+  return api.get(`/${id}`)
+}
 
-
+export const useAllProductsData = (onSuccess, onError) => {
   return useQuery({
     queryKey: ["all-products"],
-    queryFn: () => getAllProducts(queryParams),
+    queryFn: () => getAllProducts(),
+    onSuccess:onSuccess,
+    onError:onError
+  });
+};
+
+export const useSingleProductData = (onSuccess, onError, id) => {
+  return useQuery({
+    queryKey: ["product",{productid:id}],
+    queryFn: () => getProductById(id),
     onSuccess:onSuccess,
     onError:onError
   });

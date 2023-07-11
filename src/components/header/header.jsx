@@ -1,11 +1,11 @@
 import { useEffect, useState, useContext } from "react";
 import Logo from "../../assets/logo-no-background.svg";
-import style from "./navbar.module.css";
+import style from "./header.module.css";
 import { NavLink } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Context from "../../Context";
 
-const NavBar = () => {
+const HEADER = () => {
   const {screenSize} = useContext(Context)
   return (
     <header className={style.header}>
@@ -53,4 +53,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default HEADER;
