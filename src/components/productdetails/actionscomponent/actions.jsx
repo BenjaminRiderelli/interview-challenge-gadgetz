@@ -5,8 +5,6 @@ import { useAddToCartMutation } from "../../../datafetching/api";
 import Context from "../../../Context";
 
 const ACTIONS = ({ id, options }) => {
-
-
   const { colors, storages } = options;
   const { setCartItems } = useContext(Context);
   const [validationMsg, setValidationMsg] = useState("");
@@ -49,7 +47,6 @@ const ACTIONS = ({ id, options }) => {
   const onMutation = (data) => {
     setCartItems((prev) => prev + data.data.count);
     setValidationMsg("Item Added !");
-
   };
 
   const onMutationError = (err) => {
@@ -118,16 +115,14 @@ const ACTIONS = ({ id, options }) => {
           {storageMenuItemsWithEmptyOption}
         </Select>
       </div>
-      {isMutating ? (
-        <p>Loading</p>
-      ) : (
-        <button
-          className={styles.placeOrderBtn}
-          onClick={() => handleSubmit(formData)}
-        >
-          Place Order
-        </button>
-      )}
+
+      <button
+        disabled={isMutating}
+        className={styles.placeOrderBtn}
+        onClick={() => handleSubmit(formData)}
+      >
+        {isMutating ? "Loading...." : "Place Order"}
+      </button>
     </form>
   );
 };
