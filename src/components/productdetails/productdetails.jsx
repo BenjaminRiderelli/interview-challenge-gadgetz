@@ -4,6 +4,7 @@ import { useSingleProductData } from "../../datafetching/api";
 import styles from "./productdetails.module.css";
 import IMAGE from "./imagecomponent/imagewithmodal.jsx";
 import DESCRIPTION from "./descriptioncomponent/description";
+import ACTIONS from "./actionscomponent/actions";
 import Spinner from "../spinner/spinner";
 
 const ProductDetails = () => {
@@ -65,7 +66,6 @@ const ProductDetails = () => {
     colors,
     options,
   } = singleProductData ?? {};
-  const { colors: optionColors, storages } = options ?? {};
 
   const descriptionData = {
     brand,
@@ -102,7 +102,12 @@ const ProductDetails = () => {
           <div className={styles.info}>
             <DESCRIPTION descriptionData={descriptionData} />
           </div>
-          <div className={styles.actions}></div>
+          <div className={styles.actions}>
+            <ACTIONS 
+            id={productId}
+            options={options}
+            />
+          </div>
         </div>
       </div>
     </section>

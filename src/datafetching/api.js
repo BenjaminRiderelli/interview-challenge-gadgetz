@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 
-const URL_API = "https://itx-frontend-test.onrender.com/api/product";
+const URL_API = "https://itx-frontend-test.onrender.com/api";
 
 export const api = axios.create({
   baseURL: URL_API,
@@ -11,11 +11,15 @@ export const api = axios.create({
 });
 
 export const getAllProducts = (queryParams) => {
-  return api.get("");
+  return api.get("/product");
 };
 
 export const getProductById = (id) =>{
-  return api.get(`/${id}`)
+  return api.get(`/product/${id}`)
+}
+
+export const postOrder = (data) => {
+  return api.post("/cart", data)
 }
 
 export const useAllProductsData = (onSuccess, onError) => {
@@ -35,3 +39,12 @@ export const useSingleProductData = (onSuccess, onError, id) => {
     onError:onError
   });
 };
+
+export const useAddToCartMutation = (onSuccess, onError, data) =>{
+
+  return useMutation({
+    mutationFn:() => postOrder(data),
+    onSuccess:onSuccess,
+    onError:onError    
+  })
+}
