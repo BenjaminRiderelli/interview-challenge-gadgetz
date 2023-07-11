@@ -28,11 +28,11 @@ export const ContextProvider = ({ children }) => {
 
 
 
-  const onSuccess = (data) => {
+  const onSuccessAllProducts = (data) => {
     // console.log(data);
   };
 
-  const onError = (error) => {
+  const onErrorAllProducts = (error) => {
     console.log(error);
   };
 
@@ -40,7 +40,7 @@ export const ContextProvider = ({ children }) => {
     data: allProducts,
     isLoading: allProductsIsLoading,
     isError: allProductsIsError,
-  } = useAllProductsData(onSuccess, onError);
+  } = useAllProductsData(onSuccessAllProducts, onErrorAllProducts);
 
   
   const allProductsData = allProducts?.data
