@@ -63,17 +63,27 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 -Image component displays the product's image
 
 -Product's description component details the following information:
-    - Brand
-    - Model
-    - Price
-    - CPU
-    - RAM
-    - Operating sytem
-    - Screen Resolution
-    - Battery Specifications
-    - Camaras
-    - Size
-    - Weight
+     Brand
+     
+    Model
+    
+    Price
+    
+     CPU
+     
+     RAM
+     
+     Operating sytem
+     
+     Screen Resolution
+    
+     Battery Specifications
+     
+     Camaras
+     
+     Size
+     
+     Weight
 
 -Actions component lets the user choose among different options for the same product such as Storage and colour, also it lets the user add the selected product to the cart.
 
@@ -84,7 +94,7 @@ The list of products has a maximum of 4 columns and is responsive to multiple de
 # Scripts and Instalation
 
 to install, you'll need to have node.js (latest version recommended) installed. 
- Just clone the main branch of this repository and hit npm install
+ Just clone the main branch of this repository and hit npm install.
  Aditionally there are 4 scripts included:
 
 npm run START - run the app in development environment
