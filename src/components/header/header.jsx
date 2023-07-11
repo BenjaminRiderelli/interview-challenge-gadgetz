@@ -1,12 +1,17 @@
 import { useEffect, useState, useContext } from "react";
 import Logo from "../../assets/logo-no-background.svg";
 import style from "./header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Context from "../../Context";
 
 const HEADER = () => {
   const { screenSize, cartItems } = useContext(Context);
+
+  const {pathname} = useLocation()
+  const productId = pathname.split("/")[2]  
+
+
   return (
     <header className={style.header}>
       <img className={style.logo} src={Logo} />
@@ -14,13 +19,13 @@ const HEADER = () => {
         <ul>
           <li>
             <NavLink
+              end
               to="/products"
               className={style.link}
               style={({ isActive }) => {
                 return {
                   fontWeight: isActive ? "bold" : "",
-                  color: isActive ? "var(--hover-color)" : "",
-                  display: isActive ? "block" : "none",
+                  color: isActive ? "var(--main-text-color)" : "",
                 };
               }}
             >
@@ -29,12 +34,13 @@ const HEADER = () => {
           </li>
           <li>
             <NavLink
-              to="/products/:productid"
+              end
+              to={`/products/${productId}`}
               className={style.link}
               style={({ isActive }) => {
                 return {
                   fontWeight: isActive ? "bold" : "",
-                  color: isActive ? "var(--hover-color)" : "",
+                  color: isActive ? "var(--main-text-color)" : "",
                   display: isActive ? "block" : "none",
                   textAlign: isActive ? "center" : "",
                 };
