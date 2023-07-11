@@ -20,7 +20,7 @@ const DESCRIPTION = ({ descriptionData }) => {
       <div key={key} className={styles.textField}>
         <h3>{fixedTitle.charAt(0).toUpperCase() + fixedTitle.slice(1)}</h3>
         <p>
-          {key === "price" ? "$" : ""}
+          {key === "price" ? "$ " : ""}
 
           {descriptionData[key] ? descriptionData[key] : "N/A"}
           {key === "weight" ? " gr" : ""}
