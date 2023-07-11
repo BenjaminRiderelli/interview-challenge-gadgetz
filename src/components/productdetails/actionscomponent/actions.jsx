@@ -2,15 +2,19 @@ import { useState, useContext } from "react";
 import styles from "./actions.module.css";
 import { MenuItem, Select } from "@mui/material";
 import { useAddToCartMutation } from "../../../datafetching/api";
+import Context from "../../../Context";
 
 const ACTIONS = ({ id, options }) => {
+
+
   const { colors, storages } = options;
+  const { setCartItems } = useContext(Context);
+  const [validationMsg, setValidationMsg] = useState("");
   const [formData, setFormData] = useState({
     id: id,
     colorCode: colors.length === 1 ? colors[0].code : "x",
     storageCode: storages.length === 1 ? storages[0].code : "x",
   });
-  const [validationMsg, setValidationMsg] = useState("");
 
   const colorMenuItems = colors.map((color) => {
     return (
@@ -43,7 +47,9 @@ const ACTIONS = ({ id, options }) => {
   ];
 
   const onMutation = (data) => {
-    console.log(data);
+    setCartItems((prev) => prev + data.data.count);
+    setValidationMsg("Item Added !");
+
   };
 
   const onMutationError = (err) => {
@@ -68,7 +74,7 @@ const ACTIONS = ({ id, options }) => {
       setValidationMsg("Select a color and a storage please");
       return;
     }
-    mutate()
+    mutate();
   };
 
   return (

@@ -6,6 +6,9 @@ export const Context = createContext();
 export const ContextProvider = ({ children }) => {
 
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  const [cartItems, setCartItems] = useState(0)
+
+
 
   function getCurrentDimension() {
     return {
@@ -13,7 +16,6 @@ export const ContextProvider = ({ children }) => {
       height: window.innerHeight,
     };
   }
-
   useEffect(() => {
     const updateDimension = () => {
       setScreenSize(getCurrentDimension());
@@ -24,6 +26,7 @@ export const ContextProvider = ({ children }) => {
       window.removeEventListener("resize", updateDimension);
     };
   }, [screenSize]);
+
 
 
 
@@ -50,7 +53,9 @@ export const ContextProvider = ({ children }) => {
         allProductsData,
         allProductsIsLoading,
         allProductsIsError,
-        screenSize
+        screenSize,
+        cartItems,
+        setCartItems
       }}
     >
       {children}

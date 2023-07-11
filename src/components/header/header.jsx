@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Context from "../../Context";
 
 const HEADER = () => {
-  const {screenSize} = useContext(Context)
+  const { screenSize, cartItems } = useContext(Context);
   return (
     <header className={style.header}>
       <img className={style.logo} src={Logo} />
@@ -48,8 +48,8 @@ const HEADER = () => {
       </nav>
       <span className={style.shoppingCartContainer}>
         <ShoppingCartOutlinedIcon className={style.shoppingCart} />
+        {cartItems > 0 && <span className={style.cartItems}>{cartItems}</span>}
       </span>
-      {/* <p>{screenSize.width}</p> */}
     </header>
   );
 };
