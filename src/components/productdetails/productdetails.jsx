@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useSingleProductData } from "../../datafetching/api";
 import styles from "./productdetails.module.css";
 import IMAGE from "./imagecomponent/imagewithmodal.jsx";
@@ -63,7 +63,7 @@ const ProductDetails = () => {
   };
 
   if (singleProductIsError) {
-    return <NotFound />;
+    return <Navigate to="/404" />;
   }
 
   if (singleProductIsLoading) {
