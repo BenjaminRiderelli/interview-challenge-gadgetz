@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/products" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/404" element={<NotFound/>}/>
-        <Route path="" element={<Navigate to="/products" />} />
+        <Route exact path="" element={<Navigate to="/products" />} />
         <Route path="*" element={<Navigate to="/404"/>} />
       </Routes>
     </main>
