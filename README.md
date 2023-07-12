@@ -1,6 +1,7 @@
 # Gadgetz   
 
 Gadgetz is a small e-commerce site made in React's.js echosystem for a front-end technical interview. 
+
 visit https://phonegadgetz.netlify.app/ to see it working live
 
 ## Index
