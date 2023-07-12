@@ -10,10 +10,10 @@ function App() {
     <main className={style.app}>
       <HEADER />
       <Routes>
-        <Route path="/products" element={<ProductList />} />
+        <Route exact path="/products" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/404" element={<NotFound/>}/>
-        <Route exact path="" element={<Navigate to="/products" />} />
+        <Route path="" element={<Navigate to="/products" />} />
         <Route path="*" element={<Navigate to="/404"/>} />
       </Routes>
     </main>
